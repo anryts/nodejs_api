@@ -18,6 +18,7 @@ const server = http.createServer((req, res) => {
           try {
             let data = JSON.parse(rawData);
             data.requestDate = new Date(); // Add the date of the request
+            data.author = "made up for 2nd attestation";
             res.end(JSON.stringify(data)); // send it back as JSON
           } catch (e) {
             console.error(e.message);
